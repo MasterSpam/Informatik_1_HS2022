@@ -8,7 +8,6 @@
 # (35, 40]	Obesity class II
 # (40, ♾️)	Obesity class III
 
-
 # Height in M
 height = 1.8
 # Weight in KG

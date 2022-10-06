@@ -15,10 +15,8 @@ def rot_n():
         if char.isalpha():
             diff = a_lower if char.islower() else a_upper
             encoded += chr((ord(char) - diff + shift_by) % 26 + diff)
-
         else:
             encoded += char
-
     return encoded
 
 
