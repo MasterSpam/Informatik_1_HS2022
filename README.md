@@ -1,3 +1,4 @@
 # Informatik_1_HS2022
 Alle Access Lösungen
-Viel Spass :)
+Aber probiert es zuerst selber und kopiert nicht einfach!
+Das ist in eurem eigenem Interesse :)
