@@ -1,2 +1,3 @@
 # Informatik_1_HS2022
-Ja mein repo
+Alle Access Lösungen
+Viel Spass :)
