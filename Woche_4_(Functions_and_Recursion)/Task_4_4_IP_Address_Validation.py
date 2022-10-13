@@ -30,11 +30,13 @@ def is_valid_IPv4(ip: str):
 
     return True
 
+
 def is_valid_IPv6_hextet(hextet: str):
     """Returns True if hextet represents a valid IPv6 hextet, False otherwise"""
     if 0 <= int(hextet, 16) <= 65535:
         return True
     return False
+
 
 def is_valid_IPv6(ip: str):
     """Returns True if ip represents a valid IPv6 address, False otherwise"""
