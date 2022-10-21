@@ -12,4 +12,4 @@ def req_steps(num_disks: int) -> int:
     return 2 * req_steps(num_disks - 1) + 1
 
 
-print("For moving {} disks, {} steps are required.".format(1, req_steps(1)))
+print("For moving {} disks, {} steps are required.".format(3, req_steps(3)))
