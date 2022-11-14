@@ -1,6 +1,6 @@
 # You are completely free to change this variables to check your algorithm.
-num1 = 210
-num2 = 224
+num1 = 4999
+num2 = 14326
 
 
 def isFriendlyPair():
