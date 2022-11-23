@@ -32,6 +32,7 @@ class Publication:
     object.__ne__(self, other)
     object.__gt__(self, other)
     object.__ge__(self, other)
+    str
 
 
 # You can play around with your implementation in the body of the following 'if'.
