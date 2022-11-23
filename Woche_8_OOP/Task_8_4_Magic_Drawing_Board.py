@@ -1,5 +1,5 @@
 
-# IMPORTANT!!! I only got 2.8 out of 3 Points... I have no idea why... if you see it.. let me know :)
+# IMPORTANT!!! I only got 2.8 out of 3 Points... I have no idea why... if you see it.. let me know  :)
 class MagicDrawingBoard:
     def __init__(self, x, y):
 
