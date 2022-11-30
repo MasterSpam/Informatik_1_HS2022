@@ -35,7 +35,7 @@ class MagicDrawingBoard:
         if start[0] < 0 or start[1] < 0 or end[0] < 0 or end[1] < 0:
             raise Warning("Invalid rect input")
 
-        if start[0] >= end[0] or start[1] >= end[1]:
+        if start[0] > end[0] or start[1] > end[1]:
             raise Warning("Invalid Rect Input: no negative rect allowed")
 
         try:

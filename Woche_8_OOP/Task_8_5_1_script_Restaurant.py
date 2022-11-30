@@ -1,26 +1,42 @@
-from public.item import Item
-from public.order import Order
+from Task_8_5_3_item_Restaurant import Item
+from Task_8_5_2_order_Restaurant import Order
 
 
 class Restaurant:
 
     def __init__(self, restaurant_name, menu_list):
-        pass
+        self.__restaurant_name = restaurant_name
+        self.__menu_list = menu_list
+        self.__order = []
 
     def get_restaurant_name(self):
-        pass
+        return self.__restaurant_name
 
     def get_menu_list(self):
-        pass
+        return self.__menu_list
 
     def get_order_list(self):
-        pass
+        if self.__order:
+            return self.__order
+        return "No order yet"
 
     def set_order(self, item_list):
-        pass
+        corrected_item_list = []
+        for item in item_list:
+            if item  in self.__menu_list:
+                corrected_item_list.append(item)
+        if len(corrected_item_list) > 0:
+            self.__order.append(Order(corrected_item_list))
+
+        new_order = Order(corrected_item_list)
 
     def get_revenue(self):
-        pass
+        revenue = 0
+
+        for order in self.__order:
+            revenue += order.get_bill_amount()
+
+        return revenue
 
 
 # You can play around with your implementation in the body of the following 'if'.
@@ -41,3 +57,5 @@ if __name__ == '__main__':
     restaurant.set_order(order_list)
     # Get the revenue of the restaurant object
     print(restaurant.get_revenue())
+
+    print(restaurant.get_restaurant_name())

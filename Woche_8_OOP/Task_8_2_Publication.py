@@ -13,26 +13,67 @@ class Publication:
         return f"{__class__.__name__}({self.__authors}, {self.__title}, {self.__year})"
 
     def __repr__(self):
-        return self.__str__(self)
+        return self.__str__()
 
     def __eq__(self, other):
-        return self.__str__() == other.__str__()
+        if not isinstance(other, Publication):
+            return NotImplemented
+        return self.__is_equal(other)
+
+    def __ne__(self, other):
+        if not isinstance(other, Publication):
+            return NotImplemented
+        return not self.__is_equal(other)
+
+    def __lt__(self, other):
+        if not isinstance(other, Publication):
+            return NotImplemented
+        return self.__is_less(other)
+
+    def __le__(self, other):
+        if not isinstance(other, Publication):
+            return NotImplemented
+        return self.__is_less(other) or self.__is_equal(other)
+
+    def __gt__(self, other):
+        if not isinstance(other, Publication):
+            return NotImplemented
+        return not (self.__is_less(other) or self.__is_equal(other))
+
+    def __ge__(self, other):
+        if not isinstance(other, Publication):
+            return NotImplemented
+        return not self.__is_less(other)
+
+    def __is_equal(self, other) -> bool:
+        return self.get_unique_hash() == other.get_unique_hash()
+
+    def __is_less(self, other) -> bool:
+        if self.get_authors() == other.get_authors():
+            if self.get_title() == other.get_title():
+                return self.get_year() < other.get_year()
+            else:
+                return self.get_title() < other.get_title()
+        else:
+            return self.get_authors() < other.get_authors()
 
     def __hash__(self):
+        return self.get_unique_hash()
+
+    def get_unique_hash(self) -> int:
+        return hash(tuple(self.__authors) + (self.__title, str(self.__year)))
+
+    def get_authors(self):
+        copy = []
+        for i in self.__authors:
+            copy.append(i)
+        return copy
+
+    def get_title(self):
+        return self.__title
+
+    def get_year(self):
         return self.__year
-
-    def __lt__(self, other):    # x < y
-        if not isinstance(other, self):
-            return NotImplemented
-    # check is self.__authors < other.__authors or self.__title < other.__title or self.__year < other.year: True
-
-    object.__lt__(self, other)
-    object.__le__(self, other)
-    object.__eq__(self, other)
-    object.__ne__(self, other)
-    object.__gt__(self, other)
-    object.__ge__(self, other)
-    str
 
 
 # You can play around with your implementation in the body of the following 'if'.
