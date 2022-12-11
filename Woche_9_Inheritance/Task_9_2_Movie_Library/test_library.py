@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 from unittest import TestCase
-from public.movie import Movie
-from public.moviebox import MovieBox
-from public.library import Library
+from movie import Movie
+from moviebox import MovieBox
+from library import Library
+
 
 class LibraryTest(TestCase):
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# The signatures of this class and its public methods are required for the automated grading to work.
+# The signatures of this class and its Task_10_2_Git_Init_Add_Commit methods are required for the automated grading to work.
 # You must not change the names or the list of parameters.
 # You may introduce private/protected utility methods though.
 class ProfanityFilter:
@@ -32,3 +32,5 @@ if __name__ == '__main__':
     offensive_msg = "abc defghi mastard jklmno batch"
     clean_msg = f.filter(offensive_msg)
     print(clean_msg)  # abc defghi ?#$?#$? jklmno
+
+# self.assertEqual(abc defghi ?#$?#$? jklmno, f.filter(offensive_msg))

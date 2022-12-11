@@ -37,4 +37,4 @@ def fac2(n: int) -> int:
     return n * fac2(n - 1)
 
 
-print("fac2({}) = {}".format(5, fac(5)))
+print("fac2({}) = {}".format(5, fac2(5)))

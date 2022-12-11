@@ -24,5 +24,5 @@ def get_average_grade(path):
 
 
 print(get_average_grade("my_grades.txt"))
-# print(get_average_grade("public/my_grades.txt"))
+# print(get_average_grade("Task_10_2_Git_Init_Add_Commit/my_grades.txt"))
 
