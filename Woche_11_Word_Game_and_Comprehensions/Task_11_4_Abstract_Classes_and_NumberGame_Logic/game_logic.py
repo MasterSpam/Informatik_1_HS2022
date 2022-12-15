@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from abc import ABC, abstractmethod
+from random import choice
 
 
 class GameLogic(ABC):
@@ -10,14 +11,25 @@ class GameLogic(ABC):
         self.len_words = len_words
         self.num_attempts = num_attempts
 
-    @abstractmethod
+        self.words = self._word_selection()
+        self.password = choice(self.words)
+
     def check(self, guess):
-        pass
+        if self.num_attempts == 0:
+            raise Warning("No attempts left")
+        if len(guess) != self.len_words:
+            return False, ["Wrong length"]
+        if guess == self.password:
+            return True, ["Access granted!"]
+        else:
+            return False, [
+                self._generate_feedback(guess),
+                "Access denied!"]
 
     @abstractmethod
     def _word_selection(self):
         pass
 
     @abstractmethod
-    def _generate_feedback(self):
+    def _generate_feedback(self, guess):
         pass

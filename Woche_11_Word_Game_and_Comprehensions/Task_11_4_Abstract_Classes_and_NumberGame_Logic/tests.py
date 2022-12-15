@@ -2,6 +2,7 @@
 
 from unittest import TestCase
 from word_logic import WordLogic
+from number_logic import NumberLogic
 
 
 class PublicTestSuite(TestCase):
@@ -13,6 +14,14 @@ class PublicTestSuite(TestCase):
         self.assertEqual(5, w.num_attempts)
         self.assertEqual(len(w.words), w.num_words)
         self.assertEqual(w.password in w.words, True)
+
+    def test_example2(self):
+        n = NumberLogic(10, 7, 5)
+        self.assertEqual(10, n.num_words)
+        self.assertEqual(7, n.len_words)
+        self.assertEqual(5, n.num_attempts)
+        self.assertEqual(len(n.words), n.num_words)
+        self.assertEqual(n.password in n.words, True)
 
     # This current test suite only contains one very basic test case. By now,
     # you have some experience in writing test cases. We strongly encourage

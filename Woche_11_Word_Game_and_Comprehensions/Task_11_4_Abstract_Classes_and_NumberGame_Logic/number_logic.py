@@ -1,17 +1,33 @@
 #!/usr/bin/env python3
 
 from game_logic import GameLogic
-import random
+from random import sample
+
 
 class NumberLogic(GameLogic):
 
-    def __init__(self, num_words, len_words, num_attempts):
-        super().__init__(num_words, len_words, num_attempts)
-        self.num_words = num_words
-        self.len_words = len_words
-        self.num_attempts = num_attempts
-        num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        for i in range(num_words):
-            pass
+    def _word_selection(self):
+        sequences = []
 
+        while len(sequences) < self.num_words:
+            sequence = "".join(sample("0123456789", self.len_words))
 
+            if sequence not in sequences:
+                sequences.append(sequence)
+
+        return sequences
+
+    def _generate_feedback(self, guess):
+        feedback_guess = set(guess)
+        feedback_password = set(self.password)
+
+        num_correct = len(feedback_guess.intersection(feedback_password))
+        return "%d/%d correct" % (num_correct, self.len_words)
+
+    def check(self, guess):
+        if len(guess) != self.len_words:
+            raise Warning("Invalid input length!")
+        for number in guess:
+            if guess.count(number) != 1:
+                raise Warning("Input can't have a number more than once!")
+        return super().check(guess)

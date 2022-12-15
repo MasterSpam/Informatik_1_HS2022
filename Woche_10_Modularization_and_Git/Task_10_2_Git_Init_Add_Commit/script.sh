@@ -10,5 +10,3 @@ git commit -m "Add files a.txt and b.txt"
 printf "\nb2" >> b.txt
 git add b.txt
 git commit -m "Add second line to b.txt"
-
-
