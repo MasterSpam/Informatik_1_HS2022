@@ -1,0 +1,12 @@
+zip is two different things in Python :
+
+zip is a builtin function that does an elementwise combination of one or more sequences - for example :
+>>> l1 = [1,2,3,4,5]
+>>> l2 = ['a','b','c','d','e']
+>>> list(zip(l1,l2))
+[(1,'a'), (2,'b'), (3,'c'), (4,'d'), (5, 'e')]
+
+zip returns an iterator of tuples, where the i-th tuple contains the i-th element from each
+of the argument sequences or iterables. The iterator stops when the shortest input iterable is exhausted.
+With a single iterable argument, it returns an iterator of 1-tuples.
+With no arguments, it returns an empty iterator.
